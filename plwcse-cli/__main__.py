@@ -22,17 +22,15 @@ def main():
         elif opt in ("-d", "--directory"):
             dir = val
         elif opt in ("-h", "--help"):
-            help()
-            return
+            return help()
         else:
             print("use plwcse-cli -h for info on how to use")
 
     if 'file' in locals() and "dir" in locals():
-        print("can't use --file and --directory in the same line/command.")
-        return
+        return print("can't use --file and --directory in the same line/command.")   
 
     elif 'api_key' not in locals():
-        print("It is mendatory to provide an API key to upload to pillowcase. If you don't have one, please create an account on https://plwcse.top")
+        return print("It is mendatory to provide an API key to upload to pillowcase. If you don't have one, please create an account on https://plwcse.top")
     
     elif 'file' in locals():
         upload_file(file, api_key)
